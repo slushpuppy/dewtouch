@@ -2,5 +2,8 @@
 
 class Transaction extends AppModel
 {
-    public $belongsTo = array('Member');
+    var $hasMany = array('TransactionItem' => array(
+        'foreignKey'    => 'transaction_id',
+    )
+    );
 }
